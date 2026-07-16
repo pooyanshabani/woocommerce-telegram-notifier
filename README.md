@@ -1,198 +1,330 @@
 # WooCommerce Telegram Notifier
 
-Receive **real-time WooCommerce notifications** directly in your Telegram group or private chat.
-
-Stay informed about new orders, order status updates, inventory changes, and customer activity without opening your WordPress dashboard.
-
----
-
-## ✨ Features
-
-- 📦 Instant **New Order Notifications**
-- 🔄 Order Status Change Notifications
-- ⚠️ Low Stock Alerts
-- ❌ Out of Stock Notifications
-- 💬 New Product Comment Notifications
-- 🤖 Telegram Bot Integration
-- 😀 Rich Emoji Support
-- 🔗 Direct Links to Orders, Products and Comments
-- ⚙️ Lightweight & Fast
-- 🛒 Native WooCommerce Integration
-- 🔒 Secure WordPress Settings API
-- 🌐 Multilingual Ready
+> 🚀 Real-time Telegram notifications for WooCommerce.
+>
+> Receive instant notifications for new orders, order updates, inventory changes, and customer activity directly in your Telegram group or private chat.
 
 ---
 
-## 📷 Screenshots
+<p align="center">
 
-### Settings Panel
+<img src="images/banner.png" alt="WooCommerce Telegram Notifier">
 
-Configure your Telegram Bot Token and enable or disable each notification type individually.
+</p>
 
-![Settings](images/settings-page.png)
+## Why WooCommerce Telegram Notifier?
+
+Managing an online store means constantly checking your dashboard for new orders, stock changes, and customer activity.
+
+**WooCommerce Telegram Notifier** keeps your entire team informed in real time by sending important WooCommerce events directly to Telegram.
+
+No need to keep your WordPress dashboard open.
+
+Perfect for:
+
+- 🛍 Store Owners
+- 👨‍💼 Store Managers
+- 📦 Warehouse Teams
+- 💬 Customer Support
+- 👨‍💻 Developers
+- 📱 Remote Teams
 
 ---
 
-### New Order Notification
+# ✨ Features
 
-Receive complete order information directly in Telegram.
+### 🛒 WooCommerce Notifications
 
-Includes:
+- ✅ New Order Notifications
+- ✅ Order Status Updates
+- ✅ Product Low Stock Alerts
+- ✅ Product Out of Stock Alerts
+- ✅ New Product Comment Notifications
+
+---
+
+### 🤖 Telegram Integration
+
+- Telegram Bot API
+- Private Chat Support
+- Telegram Group Support
+- Multiple Team Members Receive Notifications
+- Real-Time Delivery
+
+Simply add your Telegram Bot to a group and everyone in your team will receive store notifications instantly.
+
+---
+
+### 🔗 Smart Quick Links
+
+Every notification contains useful shortcuts such as:
+
+- View Order
+- View Product
+- View Customer Comment
+
+This allows administrators to access the related page with a single click.
+
+---
+
+### 😀 Rich Message Formatting
+
+Notifications are designed for readability.
+
+Each message includes:
+
+- Emoji Icons
+- Clean Sections
+- Organized Information
+- Clickable Links
+- Highlighted Important Data
+
+---
+
+### ⚡ Lightweight
+
+- Native WooCommerce Hooks
+- Optimized Performance
+- No External Services Required
+- Minimal Server Resources
+
+---
+
+# 📷 Screenshots
+
+---
+
+## Plugin Settings
+
+Configure your Telegram Bot and choose which events should trigger notifications.
+
+![Plugin Settings](images/settings-page.png)
+
+---
+
+## New Order Notification
+
+Receive complete order information immediately after a customer places an order.
+
+Included information:
 
 - Customer Details
-- Billing Information
-- Ordered Products
-- Coupons
+- Company
+- Address
+- Phone Number
+- Email
 - Payment Method
 - Order Notes
+- Purchased Products
+- Coupon Details
 - Order Total
 - Direct Order Link
 
-![New Order](images/new-order.png)
+![New Order Notification](images/new-order.png)
 
 ---
 
-### Product Out of Stock
+## Order Status Notification
 
-Receive an instant notification whenever a product becomes unavailable.
+Receive instant updates whenever the order status changes.
 
-Includes a direct link to the product.
-
-![Out of Stock](images/out-of-stock.png)
+![Order Status](images/order-status.png)
 
 ---
 
-### Low Stock Notification
+## Low Stock Alert
 
-Get notified before products run out of stock.
+Know before products run out.
+
+Receive an alert when stock reaches the configured threshold.
 
 ![Low Stock](images/low-stock.png)
 
 ---
 
-### New Product Comment
+## Out of Stock Notification
 
-Receive customer comments instantly with a direct link to moderate or view the comment.
+Receive an instant notification when a product becomes unavailable.
+
+A direct link to the product page is included.
+
+![Out of Stock](images/out-of-stock.png)
+
+---
+
+## Product Comment Notification
+
+Receive customer comments immediately after submission.
+
+Includes a direct link to the comment for moderation.
 
 ![Comment Notification](images/comment.png)
 
 ---
 
-## 🚀 Supported Notifications
+# 👥 Team Collaboration
 
-✔ New Order
+WooCommerce Telegram Notifier was designed for teams.
 
-✔ Order Status Changed
+Instead of sending notifications to only one administrator, your Telegram Bot can be added to a group where multiple team members receive updates simultaneously.
 
-✔ Product Low Stock
+Ideal for:
 
-✔ Product Out of Stock
+- Store Managers
+- Sales Teams
+- Warehouse Staff
+- Customer Support
+- Business Owners
 
-✔ New Product Comment
-
----
-
-## 🔗 Smart Links
-
-Each notification contains useful direct links that allow administrators to jump directly to the related resource.
-
-Examples:
-
-- View Order
-- View Product
-- View Comment
-
-This significantly reduces the time required to manage store events.
+Everyone stays informed without logging into WordPress.
 
 ---
 
-## 😀 Rich Message Formatting
+# 🚀 Installation
 
-Notifications are designed to be easy to read.
-
-Features include:
-
-- Emoji Icons
-- Clean Formatting
-- Highlighted Important Information
-- Organized Sections
-- Clickable Links
-
----
-
-## ⚙️ Installation
-
-1. Upload the plugin to your WordPress website.
+1. Upload the plugin to WordPress.
 2. Activate the plugin.
-3. Go to:
+3. Navigate to:
 
+```
 WooCommerce → Settings → Woo Notifier
+```
 
-4. Enter your Telegram Bot Token.
-5. Enable the notifications you need.
-6. Save your settings.
+4. Create a Telegram Bot using **@BotFather**.
+5. Copy your Bot Token.
+6. Paste the token into the plugin settings.
+7. Enable the notification types you need.
+8. Save your settings.
 
-Done! 🎉
+You're ready to receive notifications 🎉
 
 ---
 
-## 🤖 Create a Telegram Bot
+# 🤖 Telegram Setup
 
 1. Open **@BotFather**
-2. Create a new bot.
-3. Copy the Bot Token.
-4. Add your bot to a Telegram Group or Channel.
-5. Paste the Bot Token into the plugin settings.
+2. Create a new Bot
+3. Copy the Bot Token
+4. Add the Bot to your Telegram Group (or use a private chat)
+5. Grant the Bot permission to send messages
+6. Save the Bot Token inside the plugin
 
 ---
 
-## 💻 Requirements
+# 💻 Requirements
 
 - WordPress 6.0+
 - WooCommerce
 - PHP 7.2+
+- Telegram Bot
 
 ---
 
-## 🏗 Built With
+# 🏗️ Built With
 
-- WordPress Settings API
-- WooCommerce Hooks
-- Telegram Bot API
 - PHP
 - WordPress Plugin API
+- WooCommerce Hooks
+- WordPress Settings API
+- Telegram Bot API
 
 ---
 
-## 🛣 Roadmap
+# 🛣️ Roadmap
 
-Upcoming features planned:
+### ✅ Current
 
-- Slack Notifications
-- Discord Notifications
-- WhatsApp Support
-- Microsoft Teams
+- WooCommerce Notifications
+- Telegram Bot Integration
+- Telegram Group Support
+- Rich Emoji Messages
+- Smart Quick Links
+- Stock Monitoring
+- Product Comment Notifications
+
+---
+
+### 🚧 Coming Soon
+
+#### Forms Integration
+
+- Elementor Forms Notifications
+- Contact Form 7 Notifications
+- Fluent Forms Notifications
+- Gravity Forms Notifications
+
+---
+
+#### WordPress Events
+
+- New User Registration
+- User Login Notifications
+- Password Reset Notifications
+- Admin Activity Alerts
+
+---
+
+#### WooCommerce
+
+- Refund Notifications
+- Failed Payment Alerts
+- Customer Registration
+- Coupon Usage Notifications
+- Product Review Notifications
+
+---
+
+#### Advanced Features
+
 - Custom Notification Templates
-- Multiple Telegram Chats
-- Custom Notification Conditions
-- Webhook Support
+- Conditional Notifications
+- Multiple Telegram Groups
+- Role-based Notifications
+- Scheduled Reports
+- Daily Sales Report
+- Weekly Sales Report
 
 ---
 
-## 👨‍💻 Author
+#### Future Integrations
 
-**Pooyan Shabani**
+- Slack
+- Discord
+- Microsoft Teams
+- WhatsApp
+- REST API
+- Webhooks
+
+---
+
+# 🤝 Contributing
+
+Contributions, feature requests and bug reports are always welcome.
+
+If you have ideas to improve this project, feel free to open an Issue or submit a Pull Request.
+
+---
+
+# 👨‍💻 Author
+
+### Pooyan Shabani
 
 Senior WordPress Engineer
 
-GitHub:
+GitHub
+
 https://github.com/pooyanshabani
 
-Website:
+Website
+
 https://pooyan-shabani.ir
+
+LinkedIn
+
+https://linkedin.com/in/pooyan-shabani
 
 ---
 
-## 📄 License
+# 📄 License
 
 GPL v2 or later
