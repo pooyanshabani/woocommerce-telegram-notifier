@@ -8,7 +8,7 @@
 
 <p align="center">
 
-<kbd><img src=".github/screenshots/banner.webp" alt="WooCommerce Telegram Notifier"></kbd>
+<kbd><img src=".github/screenshots/banner.webp" alt="WooCommerce Telegram Notifier" style="border-radius: 20px;"></kbd>
 
 </p>
 
