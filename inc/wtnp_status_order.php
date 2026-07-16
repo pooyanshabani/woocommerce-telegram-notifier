@@ -18,9 +18,9 @@ function wtnp_so_status_completed($order_id, $old_status, $new_status)
 
 
 	if ($order->get_user_id()) {
-        $userlogin = ' عضو';
+        $userlogin = __('Customer','wtnp-tn-woocommerce');
     } else {
-        $userlogin = ' مهمان';
+        $userlogin = __('Guest','wtnp-tn-woocommerce');
     }
 	
 
@@ -51,59 +51,64 @@ function wtnp_so_status_completed($order_id, $old_status, $new_status)
 
 
 	if ($status == 'canceled' || $status == 'cancelled'){$status = 'لغو شده';$status_icon = '❌ ';}
-	elseif ($status == 'processing'){$status = 'در حال انجام';$status_icon = '🔄 ';}
-	elseif ($status == 'pending'){$status = 'در انتظار پرداخت';$status_icon = '🟠 ';}
-	elseif ($status == 'failed'){$status = 'ناموفق';$status_icon = '❌ ';}
-	elseif ($status == 'refunded'){$status = 'مسترد شده';$status_icon = '↩️ ';}
-	elseif ($status == 'on-hold'){$status = 'در انتظار بررسی';$status_icon = '🟠 ';}
-	elseif ($status == 'completed'){$status = 'تکمیل شده';$status_icon = '✅ ';}
-	elseif ($status == 'draft'){$status = 'پیش‌نویس';$status_icon = '🟣 ';}
+	elseif ($status == 'processing'){$status = __('Processing', 'wtnp-tn-woocommerce') ;$status_icon = '🔄 ';}
+	elseif ($status == 'pending'){$status = __('Pending', 'wtnp-tn-woocommerce');$status_icon = '🟠 ';}
+	elseif ($status == 'failed'){$status = __('Failed', 'wtnp-tn-woocommerce');$status_icon = '❌ ';}
+	elseif ($status == 'refunded'){$status = __('Refunded', 'wtnp-tn-woocommerce');$status_icon = '↩️ ';}
+	elseif ($status == 'on-hold'){$status = __('On-hold', 'wtnp-tn-woocommerce');$status_icon = '🟠 ';}
+	elseif ($status == 'completed'){$status = __('Completed', 'wtnp-tn-woocommerce');$status_icon = '✅ ';}
+	elseif ($status == 'draft'){$status = __('Draft', 'wtnp-tn-woocommerce');$status_icon = '🟣 ';}
 
-	$wtnp_message = "⚠️ بروزرسانی سفارش شماره -  $order_id" . "\n";
-	$wtnp_message .= "🕒 زمان بروزرسانی: $date_modified" . "\n";
-	$wtnp_message .= "$status_icon وضعیت سفارش: " . "$status " . "\n";
-	$wtnp_message .= "🕒 زمان ثبت سفارش: $order_date" . "\n";
-	$wtnp_message .= "\n" . "🔖 جزئیات صورت حساب: ". "\n";
-	$wtnp_message .= "👤 نام: $billing_first_name $billing_last_name" . "\n";
-	$wtnp_message .= "🧑🏻‍💻 کاربر: $userlogin" . "\n";
-	if ($billing_company) {$wtnp_message .= "🏢 شرکت: $billing_company" . "\n";}
-	if ($billing_city || $billing_address1 || $billing_address2) { $wtnp_message .= "📍 آدرس: $billing_city - $billing_address1 - $billing_address2 - $billing_postcode" . "\n";}
-	$wtnp_message .= "📞 تلفن: $billing_phone" . "\n";
-	$wtnp_message .= "✉️ ایمیل: $billing_email" . "\n";
-	if ($shipping_first_name || $shipping_last_name || $shipping_city || $shipping_address1 || $shipping_postcode) { 
-		$wtnp_message .= "\n" . "📦 جزئیات حمل و نقل: ". "\n";
-		$wtnp_message .= "👤 نام: $shipping_first_name $shipping_last_name" . "\n";
-		if ($shipping_company) {$wtnp_message .= "🏢 شرکت: $shipping_company" . "\n";}
-		$wtnp_message .= "📍 آدرس: $shipping_city - $shipping_address1 - $shipping_address2 - $shipping_postcode" . "\n";
-	}
-	$wtnp_message .= "🏦 روش پرداخت: $payment_method" . "\n";
-	if ($shipping_method) {$wtnp_message .= "🚚 روش ارسال: $shipping_method" . "\n";}
 	
-	if($order_note) {$wtnp_message .= "\n" . "🗒 یادداشت مشتری: $order_note" . "\n";}
+	$wtnp_message  = "⚠️ " . __('Update Order', 'wtnp-tn-woocommerce') . "$order_id\n";
+	
+	$wtnp_message .= "\n🕒 " . __('Update Time', 'wtnp-tn-woocommerce') . ": $date_modified\n";
+	$wtnp_message .= "\n$status_icon " . __('Order Status', 'wtnp-tn-woocommerce') . ": $status\n";
+	
+	$wtnp_message .= "\n🕒 " . __('Order Time', 'wtnp-tn-woocommerce') . ": $order_date\n";
+	$wtnp_message .= "\n🔖 " . __('Order Detailes', 'wtnp-tn-woocommerce') . ":\n";
+	
+	
+	$wtnp_message .= "#️⃣ " . __('Order ID', 'wtnp-tn-woocommerce') . ": $order_id\n";
+	
+	$wtnp_message .= "👤" . __('Name', 'wtnp-tn-woocommerce') . ": $billing_first_name $billing_last_name\n";
+	$wtnp_message .= "🧑🏻‍💻 " . __('User', 'wtnp-tn-woocommerce') . ": $userlogin\n";
+	if ($billing_company) {$wtnp_message .= "🏢 " . __('Company', 'wtnp-tn-woocommerce') . ": $billing_company\n";}
+    if ($billing_city || $billing_address1 || $billing_address2) { $wtnp_message .= "📍 " . __('Address', 'wtnp-tn-woocommerce') .  ": $billing_city - $billing_address1 - $billing_address2 - $billing_postcode" . "\n";}
+   
+    $wtnp_message .= "📞 " . __('Phone', 'wtnp-tn-woocommerce') . ": $billing_phone\n";
+    $wtnp_message .= "✉️ " . __('Mail', 'wtnp-tn-woocommerce') . ": $billing_email\n";
+	if ($shipping_first_name || $shipping_last_name || $shipping_city || $shipping_address1 || $shipping_postcode) { 
+		$wtnp_message .= "\n📦 " . __('Shipping details', 'wtnp-tn-woocommerce') . ":\n";
+		$wtnp_message .= "👤 " . __('Name', 'wtnp-tn-woocommerce') . ": $shipping_first_name $shipping_last_name\n";
+
+		if ($shipping_company) {$wtnp_message .= "🏢 " . __('Company', 'wtnp-tn-woocommerce') . ": $shipping_company\n";}
+		
+		$wtnp_message .= "📍 " . __('Address', 'wtnp-tn-woocommerce') .  ": $shipping_city - $shipping_address1 - $shipping_address2 - $shipping_postcode" . "\n";
+	}
+	$wtnp_message .= "🏦 " . __('Payment Method', 'wtnp-tn-woocommerce') . ": $payment_method\n";
+	if ($shipping_method) {$wtnp_message .= "🚚 " . __('Shipping Method', 'wtnp-tn-woocommerce') . ": $shipping_method\n";}
+	
+	if($order_note) {$wtnp_message .= "\n🗒 " . __('Order Note', 'wtnp-tn-woocommerce') . ": $order_note\n";}
 
 
 	$wtnp_currency = get_woocommerce_currency();
-	if($wtnp_currency == 'IRT') {
-		$wtnp_currency = 'تومان';
-		} elseif ($wtnp_currency == 'IRHT') {$wtnp_currency = 'هزار تومان';
-		} elseif ($wtnp_currency == 'IRHR') {$wtnp_currency = 'هزار ریال';
-	}
-
 
 	$items = $order->get_items();
-	$wtnp_message .= "\n" . "🛒 محصولات: " . "\n";
+	$wtnp_message .= "\n🛒 " . __('Product(s)', 'wtnp-tn-woocommerce') . "\n";
 	foreach ($items as $item) {
 		$product_name = $item->get_name();
 		$product_quantity = $item->get_quantity();
 		$product_price = $item->get_total();
-		$wtnp_message .= " - $product_name • تعداد: $product_quantity • قیمت: $product_price" . "\n";
+		$wtnp_message .= " - $product_name • " . __('Quantity', 'wtnp-tn-woocommerce') . ": $product_quantity • " . __('Price', 'wtnp-tn-woocommerce') . " : $product_price" . "\n";
 	}
 
 	$order_total = $order->get_total();
-	if($shipping_cost) {$wtnp_message .= "\n" . "📦 هزینه ارسال: $shipping_cost " . "\n";}
-	if($coupon_name){$wtnp_message .= "🎟 کد تخفیف: $coupon_name" . "\n" . "💲 مقدار تخفیف: - $discount_total" . "\n";}
-    $wtnp_message .= "💰 مبلغ کل: $order_total " . " $wtnp_currency". "\n";
-    $wtnp_message .= "#بروزرسانی_سفارش";
+	if($shipping_cost) {$wtnp_message .= "\n📦 " . __('Shipping Cost', 'wtnp-tn-woocommerce') . ": $shipping_cost\n"; }
+	
+	if($coupon_name){$wtnp_message .= "\n🎟 " . __('Coupon Name', 'wtnp-tn-woocommerce') . ": $coupon_name" . "\n" . "💲 " . __('Discount Amount', 'wtnp-tn-woocommerce') . ": - $discount_total" . "\n";}
+	$wtnp_message .= "💰 " . __('Total', 'wtnp-tn-woocommerce') . ": $order_total  $wtnp_currency\n";
+	$wtnp_message .= "\n" . __('#Update_Order', 'wtnp-tn-woocommerce');
 	$url_link = get_admin_url() . "post.php?post=" . $order_id ."&action=edit";
 
 
