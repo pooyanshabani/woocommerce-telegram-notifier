@@ -8,7 +8,7 @@
 
 <p align="center">
 
-<img src=".github/screenshots/banner.png" alt="WooCommerce Telegram Notifier">
+<img src=".github/screenshots/banner.webp" alt="WooCommerce Telegram Notifier">
 
 </p>
 
@@ -98,10 +98,16 @@ Each message includes:
 
 Configure your Telegram Bot and choose which events should trigger notifications.
 
-![Plugin Settings](.github/screenshots/settings-page.png)
+![Plugin Settings](.github/screenshots/settings-page.webp)
 
 ---
+## 📱 Telegram Notifications
 
+Receive beautiful real-time notifications directly inside Telegram.
+
+![Telegram Notifications](.github/screenshots/telegram.webp)
+
+---
 ## New Order Notification
 
 Receive complete order information immediately after a customer places an order.
@@ -119,8 +125,6 @@ Included information:
 - Coupon Details
 - Order Total
 - Direct Order Link
-
-![Low Stock](.github/screenshots/telegram.png)
 
 ---
 
