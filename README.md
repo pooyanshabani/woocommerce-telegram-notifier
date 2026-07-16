@@ -120,15 +120,13 @@ Included information:
 - Order Total
 - Direct Order Link
 
-![New Order Notification](images/new-order.png)
+![Low Stock](.github/screenshots/telegram.png)
 
 ---
 
 ## Order Status Notification
 
 Receive instant updates whenever the order status changes.
-
-![Order Status](.github/screenshots/order-status.png)
 
 ---
 
@@ -138,8 +136,6 @@ Know before products run out.
 
 Receive an alert when stock reaches the configured threshold.
 
-![Low Stock](.github/screenshots/low-stock.png)
-
 ---
 
 ## Out of Stock Notification
@@ -148,8 +144,6 @@ Receive an instant notification when a product becomes unavailable.
 
 A direct link to the product page is included.
 
-![Out of Stock](.github/screenshots/out-of-stock.png)
-
 ---
 
 ## Product Comment Notification
@@ -157,8 +151,6 @@ A direct link to the product page is included.
 Receive customer comments immediately after submission.
 
 Includes a direct link to the comment for moderation.
-
-![Comment Notification](.github/screenshots/comment.png)
 
 ---
 
