@@ -11,13 +11,15 @@ function wtnp_custom_outof_stock_action( $product ) {
 	$product_name = $product->get_name();
 	$stock_quantity = $product->get_stock_quantity();
 
-	$wtnp_message = "⚠️ موجودی محصول تمام شده است!" . "\n";
-	$wtnp_message .= "🕒 زمان: $current_time" . "\n";
-	$wtnp_message .= "📦 محصول: $product_name" . "\n";
 
-	if ($stock_quantity) {$wtnp_message .= "🥡 موجودی: $stock_quantity" . "\n";}
+	$wtnp_message = "⚠️ " . __('Product Out of Stock', 'wtnp-tn-woocommerce') . "\n";
+	$wtnp_message .= "\n🕒 " . __('Time', 'wtnp-tn-woocommerce') . ": $current_time\n";
+	$wtnp_message .= "📦 " . __('Product Title', 'wtnp-tn-woocommerce') . ": $product_name\n";
+
+	if ($stock_quantity) {$wtnp_message .= "🥡 " . __('Stock:','wtnp-tn-woocommerce') . $stock_quantity . "\n";}
+
 	//$wtnp_message .= "\n" . "$product_link" . "\n";
-	$wtnp_message .= "#اتمام_موجودی";
+	$wtnp_message .="\n" . __('#Out_of_Stock','wtnp-tn-woocommerce');
 	 
 
     global $wtnp_settings_telegramcb;
