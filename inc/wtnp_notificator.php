@@ -22,7 +22,7 @@ function notificator_send_message_wtnp_telegram ($message, $url_link = NULL ) {
 	$data = json_decode($json_data, true);
 
 	if ($data === null) {
-		die('خطا در خواندن یا تجزیه فایل JSON.');
+		//die('خطا در خواندن یا تجزیه فایل JSON.');
 	}
 	$token = $data['token'];
 	$base_url = $data['baseURL'];
@@ -35,7 +35,7 @@ function notificator_send_message_wtnp_telegram ($message, $url_link = NULL ) {
 
 
 	if ( $url_link ) {
-		$button_text = ' 🔗 مشاهده لینک ';
+		$button_text = ' 🔗  ' . __('Preview Link','wtnp-tn-woocommerce');
 		$keyboard = [
 			'inline_keyboard' => [
 				[
