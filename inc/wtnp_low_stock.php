@@ -10,13 +10,13 @@ function wtnp_custom_low_stock_action( $product ) {
 	$product_name = $product->get_name();
 	$stock_quantity = $product->get_stock_quantity();
 
-	$wtnp_message = "⚠️ موجودی محصول کم شده است!" . "\n";
-	$wtnp_message .= "🕒 زمان: $current_time" . "\n";
-	$wtnp_message .= "📦 محصول: $product_name" . "\n";
+	$wtnp_message = "⚠️ " . __('Product inventory is low', 'wtnp-tn-woocommerce') . "\n";
+	$wtnp_message .= "\n🕒 " . __('Time', 'wtnp-tn-woocommerce') . ": $current_time\n";
+	$wtnp_message .= "📦 " . __('Product Title', 'wtnp-tn-woocommerce') . ": $product_name\n";
 
-	if ($stock_quantity) {$wtnp_message .= "🥡 موجودی: $stock_quantity" . "\n";}
+	if ($stock_quantity) {$wtnp_message .= "🥡 " . __('Low Stock:','wtnp-tn-woocommerce') . $stock_quantity . "\n";}
 	//$wtnp_message .= "\n" . "$product_link" . "\n";
-	$wtnp_message .= "#کاهش_موجودی";
+	$wtnp_message .= "\n" . __('#Low_Stock','wtnp-tn-woocommerce');
 	 
 
     global $wtnp_settings_telegramcb;
