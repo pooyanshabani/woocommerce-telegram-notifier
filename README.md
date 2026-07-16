@@ -4,11 +4,19 @@
 >
 > Receive instant notifications for new orders, order updates, inventory changes, and customer activity directly in your Telegram group or private chat.
 
+<img src="https://img.shields.io/badge/WordPress-6.0+-21759B">
+
+<img src="https://img.shields.io/badge/WooCommerce-Compatible-96588A">
+
+<img src="https://img.shields.io/badge/PHP-7.2+-777BB4">
+
+<img src="https://img.shields.io/badge/License-GPLv2-blue">
+
 ---
 
 <p align="center">
 
-<kbd><img src=".github/screenshots/banner.webp" alt="WooCommerce Telegram Notifier" style="border-radius: 20px;"></kbd>
+<kbd><img src=".github/screenshots/banner.webp" alt="WooCommerce Telegram Notifier"></kbd>
 
 </p>
 
