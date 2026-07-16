@@ -8,7 +8,7 @@
 
 <p align="center">
 
-<img src="images/banner.png" alt="WooCommerce Telegram Notifier">
+<img src=".github/screenshots/banner.png" alt="WooCommerce Telegram Notifier">
 
 </p>
 
@@ -98,7 +98,7 @@ Each message includes:
 
 Configure your Telegram Bot and choose which events should trigger notifications.
 
-![Plugin Settings](images/settings-page.png)
+![Plugin Settings](.github/screenshots/settings-page.png)
 
 ---
 
@@ -128,7 +128,7 @@ Included information:
 
 Receive instant updates whenever the order status changes.
 
-![Order Status](images/order-status.png)
+![Order Status](.github/screenshots/order-status.png)
 
 ---
 
@@ -138,7 +138,7 @@ Know before products run out.
 
 Receive an alert when stock reaches the configured threshold.
 
-![Low Stock](images/low-stock.png)
+![Low Stock](.github/screenshots/low-stock.png)
 
 ---
 
@@ -148,7 +148,7 @@ Receive an instant notification when a product becomes unavailable.
 
 A direct link to the product page is included.
 
-![Out of Stock](images/out-of-stock.png)
+![Out of Stock](.github/screenshots/out-of-stock.png)
 
 ---
 
@@ -158,7 +158,7 @@ Receive customer comments immediately after submission.
 
 Includes a direct link to the comment for moderation.
 
-![Comment Notification](images/comment.png)
+![Comment Notification](.github/screenshots/comment.png)
 
 ---
 
