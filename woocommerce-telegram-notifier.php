@@ -1,12 +1,14 @@
 <?php
 /*
- * Plugin Name: وو نوتیفیکیتور
- * Plugin URI: https://www.zhaket.com/store/web/darsad
- * Description: دریافت نوتیفیکیشن در تلگرام از فروشگاه ووکامرس (ثبت سفارش، به روزرسانی سفارش، ثبت دیدگاه جدید، کم شدن یا تمام شدن موجودی محصولات) 
- * Author: درصد - پویان شعبانی
- * Author URI: https://www.zhaket.com/store/web/darsad
+ * Plugin Name: Woocommerce Telegram Notifier
+ * Plugin URI: https://github.com/pooyanshabani
+ * Description: Receive notifications on Telegram from WooCommerce store (order registration, order update, new comment registration, product shortage or out of stock)
+ * Author: Pooyan Shabani
+ * Author URI: https://github.com/pooyanshabani
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+ * Text Domain: wtnp-tn-woocommerce
+ * Domain Path: /languages
  * Version: 1.0.0
  * Requires at least: 6.0
  * Requires PHP:      7.2
@@ -62,7 +64,7 @@ register_activation_hook(__FILE__, function () {
         );
 	}
 
-	notificator_send_message_wtnp_plugin_active ( 'Plugin WooNotificator Activated at ' . home_url() );
+	notificator_send_message_wtnp_plugin_active ( 'Plugin WooTelNotificator Activated at ' . home_url() );
 	
 	
 
@@ -71,7 +73,9 @@ register_activation_hook(__FILE__, function () {
 //when plugin deactive
 register_deactivation_hook(__FILE__, function () {
 
-    notificator_send_message_wtnp_plugin_active ('Plugin WooNotificator Deactivated at ' . home_url() );
+    notificator_send_message_wtnp_plugin_active ('Plugin WooTelNotificator Deactivated at ' . home_url() );
+    notificator_send_message_wtnp_telegram ('Plugin WooTelNotificator Deactivated at ' . home_url() );
+
 });
 
 //add css & js files in admin
@@ -93,9 +97,11 @@ add_action('admin_enqueue_scripts', function () {
 			WTNP_JSCCS_ASSEST_VER
 		);
 		$telegrambeforebg = WTNP_TNOTIF_IMAGES_URL . 'wtnp-telegram.svg';
+		$balebeforebg = WTNP_TNOTIF_IMAGES_URL . 'wtnp-bale.svg';
 		wp_add_inline_style(
 			'wtnp-admin-style',
 			".wtnp-telicon-settings::before { background-image: url($telegrambeforebg)}
+			.wtnp-baleicon-settings::before { background-image: url($balebeforebg)}
 			"
         );
 	}
@@ -152,7 +158,7 @@ if ($wtnp_settings_outofstock == 'yes') {
 
 
 function wtnp_plugins_page_settings_link($links) { 
-  $settings_link = '<a href="' . admin_url('admin.php') . '?page=wc-settings&tab=woo-wtnp-tab">پیکربندی</a>'; 
+  $settings_link = '<a href="' . admin_url('admin.php') . '?page=wc-settings&tab=woo-wtnp-tab">' . __('Setting','wtnp-tn-woocommerce') . '</a>'; 
   array_unshift($links, $settings_link); 
   return $links; 
 }
